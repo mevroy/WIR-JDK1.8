@@ -7,8 +7,25 @@
                            http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
 
 <!-- Commented for now import resource="applicationContext-properties.xml" /> -->
+    <bean class="java.net.URI" id="dbUrl">
+        <constructor-arg value="#{systemEnvironment['DATABASE_URL']}"/>
+    </bean>
+    <!-- For Heroku Postgres -->
+    <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
+        <property name="driverClass" value="${jdbc.driverClassName}"/>
+        <property name="jdbcUrl" value="#{ 'jdbc:postgresql://' + @dbUrl.getHost() + ':' + @dbUrl.getPort() + @dbUrl.getPath() + '?sslmode=require&currentSchema=groupsall' }"/>
+        <property name="user" value="#{ @dbUrl.getUserInfo().split(':')[0] }"/>
+        <property name="password" value="#{ @dbUrl.getUserInfo().split(':')[1] }"/>
+        <property name="preferredTestQuery" value="SELECT 1"/>
+        <property name="minPoolSize" value="${hibernate.c3p0.min_size}"></property>
+        <property name="maxPoolSize" value="${hibernate.c3p0.max_size}"></property>
+        <property name="maxStatements" value="${hibernate.c3p0.max_statements}"></property>
+        <property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idleConnectionTestPeriod}"></property>
+        <property name="maxIdleTime" value="${hibernate.c3p0.maxIdleTime}"></property>
+        <property name="checkoutTimeout" value="${hibernate.c3p0.checkoutTimeout}"></property>
+    </bean>
 
-    <!-- Configuring the data source bean for the entire system -->
+    <!-- Configuring the data source bean for the entire system
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
         <property name="driverClass" value="${jdbc.driverClassName}"/>
         <property name="jdbcUrl" value="${jdbc.url}"/>
@@ -21,22 +38,8 @@
         <property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idleConnectionTestPeriod}"></property>
         <property name="maxIdleTime" value="${hibernate.c3p0.maxIdleTime}"></property>
         <property name="checkoutTimeout" value="${hibernate.c3p0.checkoutTimeout}"></property>
-    </bean>
-<!--
-    <bean id="dataSourceJobs" class="com.mchange.v2.c3p0.ComboPooledDataSource" destroy-method="close">
-        <property name="driverClass" value="${jdbc.driverClassName}"/>
-        <property name="jdbcUrl" value="${jdbc.url}"/>
-        <property name="user" value="${jdbc.username}"/>
-        <property name="password" value="${jdbc.password}"/>
-        <property name="preferredTestQuery" value="SELECT 1"/>
-        <property name="minPoolSize" value="${hibernate.c3p0.min_size}"></property>
-        <property name="maxPoolSize" value="${hibernate.c3p0.max_size}"></property>
-        <property name="maxStatements" value="${hibernate.c3p0.max_statements}"></property>
-        <property name="idleConnectionTestPeriod" value="${hibernate.c3p0.idleConnectionTestPeriod}"></property>
-        <property name="maxIdleTime" value="${hibernate.c3p0.maxIdleTime}"></property>
-        <property name="checkoutTimeout" value="${hibernate.c3p0.checkoutTimeout}"></property>
-    </bean>
-  -->
+    </bean>  -->
+
     <bean id="dataSourceInitializer" class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
         <property name="dataSource" ref="dataSource"/>
         <property name="databasePopulator">
