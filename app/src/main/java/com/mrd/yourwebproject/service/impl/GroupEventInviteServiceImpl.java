@@ -103,7 +103,8 @@ public class GroupEventInviteServiceImpl extends
 				"batch/files");
 		// load the document
 
-		String urlLogo =  props.applicationUrl+"/"+props.applicationProject+"/00622239-f2b3-48e7-a55a-d7c1f65d05ad/batch/files/MKC_Logo_Xtra_Small.jpg";
+		//String urlLogo =  props.applicationUrl+"/"+props.applicationProject+"/00622239-f2b3-48e7-a55a-d7c1f65d05ad/batch/files/MKC_Logo_Xtra_Small_Email.jpg";
+		String urlLogo =  props.applicationUrl+"/"+props.applicationProject+"/res/custom/images/email/generic/MKC_Logo_Xtra_Small_Email.jpg";
 		URL logo = new URL(urlLogo);
 		File logoFile = new File(f, "MKC_Logo_Xtra_Small.jpg");
 		FileUtils.copyURLToFile(logo, logoFile);
