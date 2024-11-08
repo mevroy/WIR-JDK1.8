@@ -169,7 +169,7 @@ var lastsel = null;
 
 										    var passIdentifier = rowObject.passIdentifier;
 										    if(passIdentifier){
-										    	var txt = '<div id = "image" style="height: 150;"> <img src="https://chart.googleapis.com/chart?cht=qr&chs=150x150&chl='+passIdentifier+'" width="150" height="120" border="0" alt="" style="height: auto;" /></div>';
+										    	var txt = '<div id = "image" style="height: 150;"> <img src="https://quickchart.io/qr?margin=1&size=150&text='+passIdentifier+'" width="150" height="120" border="0" alt="" style="height: auto;" /></div>';
 										    	var html = " <button id='"+passIdentifier+"' onfocus='$(this).popover();' onclick='$(this).popover();' type='button' data-trigger='focus hover click' data-html='true' class='btn btn-mini btn-info' data-toggle='popover' data-container='body' title='Barcode: "+passIdentifier+"' data-content='"+txt+"'>"+passIdentifier+"</button>";
 										   return html;
 										   }
