@@ -23,7 +23,7 @@ public class GroupEmailActivityRepositoryImpl extends BaseHibernateJpaRepository
 
 	protected @Autowired Props props;
 	public List<GroupEmailActivity> findEmailActivitiesByEmailId(String groupEmailId) {
-		return (List<GroupEmailActivity>)sessionFactory.getCurrentSession().createQuery("from GroupEmailActivity gea where gea.groupEmail.groupEmailId = :groupEmailId order by activityTime asc))").setParameter("groupEmailId", groupEmailId).list();
+		return (List<GroupEmailActivity>)sessionFactory.getCurrentSession().createQuery("from GroupEmailActivity gea where gea.groupEmail.groupEmailId = :groupEmailId order by activityTime asc").setParameter("groupEmailId", groupEmailId).list();
 
 	}
 
