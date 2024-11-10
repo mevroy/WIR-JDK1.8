@@ -54,7 +54,6 @@
                 </property>
             </bean>
         </property>
-        // below is purely done after the first time initialization of direct loading of sql scripts. Else it always loads hbm scripts
         <property name="enabled" value="false"/>
     </bean>
 
