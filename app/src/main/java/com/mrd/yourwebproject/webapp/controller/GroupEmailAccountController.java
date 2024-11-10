@@ -63,11 +63,14 @@ public class GroupEmailAccountController extends BaseWebAppController {
 			mailSenderUntypedActor.sendTestEmail(getloggedInUser(),
 					groupEmailAccount);
 		} catch (MailAuthenticationException e) {
+			System.out.println("Mail AUth Exception:"+e.getMessage());
+
 			addAlert(
 					"The email account could not be authenticated!\nIf this is the first time you are adding this account on this server, then it might be because host email server has blocked access from this web application server. If this is the case, please login into your account and mark the unusual activity as yours and then try adding the account again. Thank You! ",
 					model);
 			return "addGroupEmailAccount";
 		} catch (Exception e) {
+			System.out.println("Mail AUth Exception:"+e.getMessage());
 			addAlert(
 					"An exception has occured!\nIf this is the first time you are adding this account on this server, then it might be because host email server has blocked access from this web application server. If this is the case, please login into your account and mark the unusual activity as yours and then try adding the account again. Thank You! ",
 					model);
