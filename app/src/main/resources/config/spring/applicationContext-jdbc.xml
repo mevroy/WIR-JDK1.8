@@ -54,7 +54,7 @@
                 </property>
             </bean>
         </property>
-        <property name="enabled" value="false"/>
+        <property name="enabled" value="true"/>
     </bean>
 
     <!-- Configuring the session factory for hibernate -->
