@@ -54,10 +54,12 @@
                 </property>
             </bean>
         </property>
-        // below is purely done after the forst time initialization of direct loading of sql scripts. Else it always loads hbm scripts 
+        // below is purely done after the forst time initialization of direct loading of sql scripts. Else it always loads hbm scripts
         <property name="enabled" value="false"/>
     </bean> -->
-
+    <bean id="batchConfigurer" class="org.springframework.batch.core.configuration.annotation.DefaultBatchConfigurer">
+        <property name="dataSource" ref="dataSource"/>
+    </bean>
     <!-- Configuring the session factory for hibernate -->
    <!-- Changed below to forur to support stateless  <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  -->
     <bean id="sessionFactory" class="org.springframework.orm.hibernate5.LocalSessionFactoryBean">
