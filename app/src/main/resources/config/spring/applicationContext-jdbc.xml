@@ -41,7 +41,7 @@
         <property name="checkoutTimeout" value="${hibernate.c3p0.checkoutTimeout}"></property>
     </bean>
 -->
-    <bean id="dataSourceInitializer" class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
+    <!--<bean id="dataSourceInitializer" class="org.springframework.jdbc.datasource.init.DataSourceInitializer">
         <property name="dataSource" ref="dataSource"/>
         <property name="databasePopulator">
             <bean class="org.springframework.jdbc.datasource.init.ResourceDatabasePopulator">
@@ -54,9 +54,9 @@
                 </property>
             </bean>
         </property>
-        <!-- below is purely done after the forst time initialization of direct loading of sql scripts. Else it always loads hbm scripts -->
+        // below is purely done after the forst time initialization of direct loading of sql scripts. Else it always loads hbm scripts -->
         <property name="enabled" value="false"/>
-    </bean>
+    </bean> -->
 
     <!-- Configuring the session factory for hibernate -->
    <!-- Changed below to forur to support stateless  <bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">  -->
