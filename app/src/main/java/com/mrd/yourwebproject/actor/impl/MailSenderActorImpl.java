@@ -81,6 +81,8 @@ import java.util.Properties;
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+
 		javaMailSender.setProtocol(groupEmailAccount.getProtocol());
 		javaMailSender.setHost(groupEmailAccount.getHost());
 		javaMailSender.setUsername(groupEmailAccount.getUsername());
@@ -193,6 +195,8 @@ import java.util.Properties;
 		Properties props = new Properties();
 		props.put("mail.smtp.auth", "true");
 		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+
 		javaMailSender.setProtocol(groupEmailAccount.getProtocol());
 		javaMailSender.setHost(groupEmailAccount.getHost());
 		javaMailSender.setUsername(groupEmailAccount.getUsername());

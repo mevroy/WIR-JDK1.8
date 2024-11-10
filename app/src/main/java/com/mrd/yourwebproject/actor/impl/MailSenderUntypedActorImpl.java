@@ -91,7 +91,9 @@ public class MailSenderUntypedActorImpl implements MailSenderUntypedActor {
 			Properties props = new Properties();
 			props.put("mail.smtp.auth", "true");
 			props.put("mail.smtp.starttls.enable", "true");
-			if (groupEmailAccount == null)
+			props.put("mail.smtp.ssl.protocols", "TLSv1.2");
+
+		if (groupEmailAccount == null)
 				throw new Exception("Email Account :"
 						+ groupEmail.getEmailAccountCode() + " not found");
 
