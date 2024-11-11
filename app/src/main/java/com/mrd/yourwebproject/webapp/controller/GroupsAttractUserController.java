@@ -445,7 +445,7 @@ public class GroupsAttractUserController extends BaseWebAppController {
 				.insertOrUpdate(registerInterest);
 		model.addAttribute("success", true);
 		if (StringUtils.isBlank(successMessage)) {
-			successMessage = "Thank You for registering your interest. Someone from the team will get back to you soon or you will receive a notification from MKC shortly.";
+			successMessage = "Thank You for registering your interest. Someone from the team will get back to you soon or you will receive a notification from the event organiser shortly.";
 		}
 		model.addAttribute("successMessage", successMessage);
 		model.addAttribute("registerInterest", registerInterest);
