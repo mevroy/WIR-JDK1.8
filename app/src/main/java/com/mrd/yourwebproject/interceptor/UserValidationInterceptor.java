@@ -125,7 +125,7 @@ public class UserValidationInterceptor implements HandlerInterceptor {
 
 					if (currentLoggedInRole != null) {
 						for (Role type : checkPermission.allowedRoles()) {
-							if (currentLoggedInRole.getRole() == type
+							if (currentLoggedInRole.getRole() == Role.SUPER_ADMIN || (currentLoggedInRole.getRole() == type
 									&& currentLoggedInRole
 											.getGroup()
 											.getGroupCode()
@@ -137,7 +137,7 @@ public class UserValidationInterceptor implements HandlerInterceptor {
 													user,
 													group,
 													StringUtils
-															.isNotBlank(groupSubLinkId))) {
+															.isNotBlank(groupSubLinkId)))) {
 								hasAccess = true;
 								break;
 							}
