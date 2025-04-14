@@ -2,8 +2,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <div class="jumbotron">
-	<div class="p-5 mb-4 bg-light rounded-3">
-	<div class="container py-5">
+	<div class="p-3 p-lg-5 mb-4 bg-light rounded-3">
+	<div class="container py-3">
 		<h2 class="mb-4">Add Group Member</h2>
 
 		<form:form commandName="groupMember" action="saveGroupMember" method="post" id="groupMember">
@@ -57,7 +57,7 @@
 				<div class="col-lg-6">
 					<div class="mb-3">
 						<label for="memberCategoryCode" class="form-label">Member Category Code</label>
-						<form:select path="memberCategoryCode" cssClass="form-control" id="memberCategoryCode">
+						<form:select path="memberCategoryCode" cssClass="form-select" id="memberCategoryCode">
 							<option value="">Select One</option>
 						</form:select>
 					</div>
@@ -124,7 +124,8 @@
 		$(document).ready(function () {
 			new tempusDominus.TempusDominus(document.getElementById('birthdayPicker'), {
 				display: { components: { clock: false } },
-				localization: { format: 'dd/MM/yyyy' }
+				localization: { format: 'dd/MM/yyyy' },
+				useCurrent: false
 			});
 
 			const startPickerEl = document.getElementById('membershipStartDate');
