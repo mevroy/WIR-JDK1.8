@@ -16,6 +16,17 @@
 			value="/WEB-INF/views/common/footer.web.jsp" />
 	</definition>
 
+	<definition name="mobilebasebootstrap5" template="/WEB-INF/views/layout/mobileweb.bootstrap5.jsp">
+		<put-attribute name="title" value="" />
+		<put-attribute name="header"
+					   value="/WEB-INF/views/common/mobileheaderDynamic.web.bootstrap5.jsp" />
+		<put-attribute name="message"
+					   value="/WEB-INF/views/common/mobilemessage.web.jsp" />
+		<put-attribute name="content" value="" />
+		<put-attribute name="footer"
+					   value="/WEB-INF/views/common/footer.web.jsp" />
+	</definition>
+
 	<definition name="base" template="/WEB-INF/views/layout/web.jsp">
 		<put-attribute name="title" value="" />
 		<put-attribute name="header"
@@ -43,10 +54,10 @@
 		<put-attribute name="content"
 			value="/WEB-INF/views/web/dashboard.web.jsp" />
 	</definition>
-	<definition name="addGroupMember" extends="mobilebase">
+	<definition name="addGroupMember" extends="mobilebasebootstrap5">
 		<put-attribute name="title" value="Add Group Member" />
 		<put-attribute name="content"
-			value="/WEB-INF/views/web/addGroupMember.web.jsp" />
+			value="/WEB-INF/views/web/bootstrap5/addGroupMember.web.jsp" />
 	</definition>
 
 	<definition name="loadUpdateGroupMember" extends="mobilebase">
