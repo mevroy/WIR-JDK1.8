@@ -1,321 +1,245 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-<div class="row">
-	<div class="span12">
-		<div class="hero-unit">
-			<form:form commandName="groupEvent" action="saveGroupEvent"
-				method="post" id="groupEvent">
-				<fieldset>
 
+<%@ page contentType="text/html;charset=UTF-8" language="java"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-					<h2>Add a New Group Event</h2>
-					<br />
-
-
-
-					<div class="span5">
-						<div class="control-group" id="eventCodeCtl">
-							<label class="control-label" for="eventCode">Group Event
-								Code</label>
-
-							<div class="controls">
-								<form:input path="eventCode" cssClass="input-xlarge"
-									id="eventCode" placeholder="Enter Event Code" />
+<div class="jumbotron">
+	<div class="p-3 p-lg-5 card shadow-lg rounded-3 mb-4">
+		<div class="card-body">
+			<form:form commandName="groupEvent" action="saveGroupEvent" method="post" id="groupEvent">
+				<h2 class="mb-4">Add a New Group Event</h2>
+				<div class="row g-4">
+					<!-- Column 1 -->
+					<div class="col-md-6">
+						<div class="mb-4">
+							<label for="eventCode" class="form-label">Group Event Code</label>
+							<div class="input-group">
+								<form:input path="eventCode" cssClass="form-control" id="eventCode" placeholder="Enter Event Code"/>
+								<span class="input-group-text"><i class="bi bi-envelope-fill"></i></span>
 							</div>
 						</div>
-						<div class="control-group" id="eventNameCtl">
-							<label class="control-label" for="eventName">Group Event
-								Name</label>
 
-							<div class="controls">
-								<form:input path="eventName" cssClass="input-xlarge"
-									id="eventName" placeholder="Enter Event Name" />
+						<div class="mb-4">
+							<label for="eventName" class="form-label">Group Event Name</label>
+							<div class="input-group">
+								<form:input path="eventName" cssClass="form-control" id="eventName" placeholder="Enter Event Name"/>
+								<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
 							</div>
 						</div>
-						<div class="control-group" id="descriptionCtl">
-							<label class="control-label" for="description">Group
-								Event Description</label>
 
-							<div class="controls">
-								<form:input path="description" cssClass="input-xlarge"
-									id="description" placeholder="Enter Description" />
+						<div class="mb-4">
+							<label for="description" class="form-label">Group Event Description</label>
+							<div class="input-group">
+								<form:input path="description" cssClass="form-control" id="description" placeholder="Enter Description"/>
+								<span class="input-group-text"><i class="bi bi-pencil-fill"></i></span>
 							</div>
 						</div>
-						<div class="control-group" id="groupCodeCtl">
-							<label class="control-label" for="groupCode">Group Code</label>
 
-							<div class="controls">
-
-								<form:input path="groupCode" cssClass="input-xlarge"
-									readonly="true" id="groupCode"
-									placeholder="Enter 3 digit Group Code" />
+						<div class="mb-4">
+							<label for="groupCode" class="form-label">Group Code</label>
+							<div class="input-group">
+								<form:input path="groupCode" cssClass="form-control" readonly="true" id="groupCode" placeholder="Enter 3 digit Group Code"/>
+								<span class="input-group-text"><i class="bi bi-lock-fill"></i></span>
 							</div>
 						</div>
-						<div class="control-group" id="memberCategoryCodeCtl">
-							<label class="control-label" for="memberCategoryCode">Member
-								Category Code</label>
 
-							<div class="controls">
-
-								<form:select path="memberCategoryCode" cssClass="input-xlarge"
-									id="memberCategoryCode">
+						<div class="mb-4">
+							<label for="memberCategoryCode" class="form-label">Member Category Code</label>
+							<div class="input-group">
+								<form:select path="memberCategoryCode" cssClass="form-select" id="memberCategoryCode">
 									<option value="">Select One</option>
 								</form:select>
 							</div>
 						</div>
-						<div class="control-group" id="eventDateCtl">
-							<label class="control-label" for="eventDate">Event Date
-								Time</label>
-							<div class="controls">
-								<div class="input-group date" id="datepicker">
-									<form:input path="eventDate"
-										cssClass="input-xlarge input-append form_datetime"
-										id="eventDate" placeholder="Event Date" />
-									&nbsp;<span class="input-prepend add-on"><i
-										class="icon-calendar"></i></span>
-								</div>
-							</div>
-						</div>
-						<div class="control-group" id="rsvpDeadlineDateCtl">
-							<label class="control-label" for="rsvpDeadlineDate">RSVP
-								Deadline Date Time</label>
-							<div class="controls">
-								<div class="input-group date" id="datepicker">
-									<form:input path="rsvpDeadlineDate" readonly="readonly"
-										cssClass="input-xlarge input-append form_datetime"
-										id="rsvpDeadlineDate" placeholder="RSVP Deadline Date" />
-									&nbsp;<span class="input-prepend add-on"><i
-										class="icon-calendar"></i></span>
-								</div>
-							</div>
-						</div>
-						<div class="control-group" id="expiryDateCtl">
-							<label class="control-label" for="expiryDate">Event
-								Expiry Date</label>
-							<div class="controls">
-								<div class="input-group date" id="datepicker">
-									<form:input path="expiryDate" readonly="readonly"
-										cssClass="input-xlarge input-append form_datetime"
-										id="expiryDate"
-										placeholder="Date after which event is invisible on portal" />
-									&nbsp;<span class="input-prepend add-on"><i
-										class="icon-calendar"></i></span>
-								</div>
-							</div>
-						</div>
-						<div class="control-group" id="groupEventInviteCodeLengthCtl">
-							<label class="control-label" for="groupEventInviteCodeLength">Event
-								Code Length</label>
 
-							<div class="controls">
-								<form:input path="groupEventInviteCodeLength"
-									cssClass="input-xlarge" id="groupEventInviteCodeLength"
-									placeholder="Enter Length of the Event Code" />
-							</div>
-						</div>
-						<div class="control-group" id="emailRsvpAllowedCtl">
-							<label class="control-label" for="emailRsvpAllowed">Email
-								RSVP Allowed?</label>
-
-							<div class="controls">
-								<form:radiobutton path="emailRsvpAllowed"
-									cssClass="input-xlarge" id="emailRsvpAllowed1" value="true" />
-								YES&nbsp;&nbsp;
-								<form:radiobutton path="emailRsvpAllowed"
-									cssClass="input-xlarge" id="emailRsvpAllowed2" value="false" />
-								NO
+						<div class="mb-4">
+							<label for="eventDate" class="form-label">Event Date Time</label>
+							<div class="input-group">
+								<form:input path="eventDate" cssClass="form-control datetimepicker" id="eventDate" placeholder="Event Date"/>
+								<span class="input-group-text"><i class="bi bi-calendar-check-fill"></i></span>
 							</div>
 						</div>
 
+						<div class="mb-4">
+							<label for="rsvpDeadlineDate" class="form-label">RSVP Deadline Date Time</label>
+							<div class="input-group">
+								<form:input path="rsvpDeadlineDate" cssClass="form-control datetimepicker" readonly="readonly" id="rsvpDeadlineDate" placeholder="RSVP Deadline Date"/>
+								<span class="input-group-text"><i class="bi bi-calendar-x-fill"></i></span>
+							</div>
+						</div>
 
+						<div class="mb-4">
+							<label for="expiryDate" class="form-label">Event Expiry Date</label>
+							<div class="input-group">
+								<form:input path="expiryDate" cssClass="form-control datetimepicker" readonly="readonly" id="expiryDate" placeholder="Date after which event is invisible"/>
+								<span class="input-group-text"><i class="bi bi-clock-fill"></i></span>
+							</div>
+						</div>
 
+						<div class="mb-4">
+							<label for="groupEventInviteCodeLength" class="form-label">Event Code Length</label>
+							<div class="input-group">
+								<form:input path="groupEventInviteCodeLength" cssClass="form-control" id="groupEventInviteCodeLength" placeholder="Enter Event Code Length"/>
+								<span class="input-group-text"><i class="bi bi-key-fill"></i></span>
+							</div>
+						</div>
+
+						<div class="mb-4">
+							<label class="form-label">Email RSVP Allowed?</label><br />
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="emailRsvpAllowed" cssClass="form-check-input" id="emailRsvpAllowed1" value="true" />
+								<label class="form-check-label" for="emailRsvpAllowed1">Yes</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="emailRsvpAllowed" cssClass="form-check-input" id="emailRsvpAllowed2" value="false" />
+								<label class="form-check-label" for="emailRsvpAllowed2">No</label>
+							</div>
+						</div>
 					</div>
 
-					<div class="span5">
-						<div class="control-group" id="maxNumberOfPassesCtl">
-							<label class="control-label" for="maxNumberOfPasses">No
-								of Event Passes</label>
-
-							<div class="controls">
-
-								<form:input path="maxNumberOfPasses" cssClass="input-xlarge"
-									id="maxNumberOfPasses"
-									placeholder="Enter max number of event passes" />
-							</div>
-						</div>
-						<div class="control-group" id="externalSurveyRedirectUrlCtl">
-							<label class="control-label" for="externalSurveyRedirectUrl">External
-								Feedback/Survey URL</label>
-
-							<div class="controls">
-
-								<form:input path="externalSurveyRedirectUrl"
-									cssClass="input-xlarge" id="externalSurveyRedirectUrl"
-									placeholder="Enter External Feedback/Survey URL" />
-							</div>
-						</div>
-						<div class="control-group" id="eventOrganiserCtl">
-							<label class="control-label" for="eventOrganiser">Event
-								Organiser</label>
-
-							<div class="controls">
-
-								<form:input path="eventOrganiser" cssClass="input-xlarge"
-									id="eventOrganiser" placeholder="Enter Event Organizer Name" />
-							</div>
-						</div>
-						<div class="control-group" id="outsideParticipationAllowedCtl">
-							<label class="control-label" for="outsideParticipationAllowed">Outside
-								Participation Allowed?</label>
-
-							<div class="controls">
-								<form:radiobutton path="outsideParticipationAllowed"
-									cssClass="input-xlarge" id="outsideParticipationAllowed1"
-									value="true" />
-								YES&nbsp;&nbsp;
-								<form:radiobutton path="outsideParticipationAllowed"
-									cssClass="input-xlarge" id="outsideParticipationAllowed2"
-									value="false" />
-								NO
-							</div>
-						</div>
-						<div class="control-group" id="paidEventCtl">
-							<label class="control-label" for="paidEvent">Paid Event?</label>
-
-							<div class="controls">
-								<form:radiobutton path="paidEvent" cssClass="input-xlarge"
-									id="paidEvent1" value="true" />
-								YES&nbsp;&nbsp;
-								<form:radiobutton path="paidEvent" cssClass="input-xlarge"
-									id="paidEvent2" value="false" />
-								NO
-							</div>
-						</div>
-						<div class="control-group" id="amountMemberCtl">
-							<label class="control-label" for="amountMember">Member's
-								Price</label>
-
-							<div class="controls">
-								<div class="input-prepend ">
-									<div class="input-prepend">
-										<span class="add-on">Adult $</span>
-
-										<form:input path="amountPerAdulthead" cssClass="input-mini"
-											id="amountPerAdulthead" placeholder="Enter Amount Per Head" />
-									</div>
-								</div>
-								<div class="input-prepend">
-									<div class="input-prepend">
-										<span class="add-on">Child $</span>
-
-										<form:input path="amountPerKidHead" cssClass="input-mini"
-											id="amountPerKidHead" placeholder="Enter Amount Per Head" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="control-group" id="amountNonMemberCtl">
-							<label class="control-label" for="amountNonMember">Non
-								Member's Price</label>
-
-							<div class="controls">
-								<div class="input-prepend">
-									<div class="input-prepend">
-										<span class="add-on">Adult $</span>
-
-										<form:input path="amountPerNMAdulthead" cssClass="input-mini"
-											id="amountPerNMAdulthead" placeholder="Enter Amount Per Head" />
-									</div>
-
-								</div>
-								<div class="input-prepend">
-									<div class="input-prepend">
-										<span class="add-on">Child $</span>
-
-										<form:input path="amountPerNMKidHead" cssClass="input-mini"
-											id="amountPerNMKidHead" placeholder="Enter Amount Per Head" />
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="control-group" id="amountPerFamilyCtl">
-							<label class="control-label" for="amountPerFamily">Amount
-								per Family</label>
-
-							<div class="controls">
-
-								<form:input path="amountPerFamily" cssClass="input-xlarge"
-									id="amountPerFamily" placeholder="Enter Amount Per Family" />
+					<!-- Column 2 -->
+					<div class="col-md-6">
+						<div class="mb-4">
+							<label for="maxNumberOfPasses" class="form-label">No. of Event Passes</label>
+							<div class="input-group">
+								<form:input path="maxNumberOfPasses" cssClass="form-control" id="maxNumberOfPasses" placeholder="Enter max number of passes"/>
+								<span class="input-group-text"><i class="bi bi-ticket-detailed-fill"></i></span>
 							</div>
 						</div>
 
-						<div class="control-group" id="eventInviteSentImmediatelyCtl">
-							<label class="control-label" for="eventInviteSentImmediately">Event
-								Invite Sent Immediately?</label>
-
-							<div class="controls">
-								<form:radiobutton path="eventInviteSentImmediately"
-									cssClass="input-xlarge" id="eventInviteSentImmediately1"
-									value="true" />
-								YES&nbsp;&nbsp;
-								<form:radiobutton path="eventInviteSentImmediately"
-									cssClass="input-xlarge" id="eventInviteSentImmediately2"
-									value="false" />
-								NO
+						<div class="mb-4">
+							<label for="externalSurveyRedirectUrl" class="form-label">External Feedback/Survey URL</label>
+							<div class="input-group">
+								<form:input path="externalSurveyRedirectUrl" cssClass="form-control" id="externalSurveyRedirectUrl" placeholder="Enter Feedback URL"/>
+								<span class="input-group-text"><i class="bi bi-link-45deg"></i></span>
 							</div>
 						</div>
 
-						<div class="control-group" id="autoResponseForRSVPAllowedCtl">
-							<label class="control-label" for="autoResponseForRSVPAllowed">Auto
-								Response for RSVP?</label>
-
-							<div class="controls">
-								<form:radiobutton path="autoResponseForRSVPAllowed"
-									cssClass="input-xlarge" id="autoResponseForRSVPAllowed1"
-									value="true"
-									onclick="$('#autoResponseRSVPTemplateCtl').show();" />
-								YES&nbsp;&nbsp;
-								<form:radiobutton path="autoResponseForRSVPAllowed"
-									cssClass="input-xlarge" id="autoResponseForRSVPAllowed2"
-									value="false"
-									onclick="$('#autoResponseRSVPTemplateCtl').hide();" />
-								NO
+						<div class="mb-4">
+							<label for="eventOrganiser" class="form-label">Event Organiser</label>
+							<div class="input-group">
+								<form:input path="eventOrganiser" cssClass="form-control" id="eventOrganiser" placeholder="Enter Organizer Name"/>
+								<span class="input-group-text"><i class="bi bi-person-badge-fill"></i></span>
 							</div>
 						</div>
-						<div class="control-group" id="autoResponseRSVPTemplateCtl">
-							<label class="control-label" for="autoResponseRSVPTemplate">RSVP
+
+						<!-- Radio buttons for Participation and Event types -->
+
+						<!-- Participation Allowed -->
+						<div class="mb-4">
+							<label class="form-label">Outside Participation Allowed?</label><br />
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="outsideParticipationAllowed" cssClass="form-check-input" id="outsideParticipationAllowed1" value="true" />
+								<label class="form-check-label" for="outsideParticipationAllowed1">Yes</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="outsideParticipationAllowed" cssClass="form-check-input" id="outsideParticipationAllowed2" value="false" />
+								<label class="form-check-label" for="outsideParticipationAllowed2">No</label>
+							</div>
+						</div>
+
+						<!-- Paid Event -->
+						<div class="mb-4">
+							<label class="form-label">Paid Event?</label><br />
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="paidEvent" cssClass="form-check-input" id="paidEvent1" value="true" />
+								<label class="form-check-label" for="paidEvent1">Yes</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="paidEvent" cssClass="form-check-input" id="paidEvent2" value="false" />
+								<label class="form-check-label" for="paidEvent2">No</label>
+							</div>
+						</div>
+
+						<!-- Pricing Inputs -->
+						<div class="mb-4">
+							<label class="form-label">Member's Price</label>
+							<div class="input-group mb-2">
+								<span class="input-group-text">Adult $</span>
+								<form:input path="amountPerAdulthead" cssClass="form-control" id="amountPerAdulthead" placeholder="Adult Price"/>
+							</div>
+							<div class="input-group">
+								<span class="input-group-text">Child $</span>
+								<form:input path="amountPerKidHead" cssClass="form-control" id="amountPerKidHead" placeholder="Child Price"/>
+							</div>
+						</div>
+
+						<div class="mb-4">
+							<label class="form-label">Non-Member's Price</label>
+							<div class="input-group mb-2">
+								<span class="input-group-text">Adult $</span>
+								<form:input path="amountPerNMAdulthead" cssClass="form-control" id="amountPerNMAdulthead" placeholder="Non-Member Adult"/>
+							</div>
+							<div class="input-group">
+								<span class="input-group-text">Child $</span>
+								<form:input path="amountPerNMKidHead" cssClass="form-control" id="amountPerNMKidHead" placeholder="Non-Member Child"/>
+							</div>
+						</div>
+
+						<div class="mb-4">
+							<label for="amountPerFamily" class="form-label">Amount per Family</label>
+							<div class="input-group">
+								<form:input path="amountPerFamily" cssClass="form-control" id="amountPerFamily" placeholder="Amount Per Family"/>
+								<span class="input-group-text"><i class="bi bi-person-fill"></i></span>
+							</div>
+						</div>
+
+						<!-- Immediate Invite Sent -->
+						<div class="mb-4">
+							<label class="form-label">Immediate Invite Sent?</label><br />
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="eventInviteSentImmediately" cssClass="form-check-input" id="eventInviteSentImmediately1" value="true" />
+								<label class="form-check-label" for="eventInviteSentImmediately1">Yes</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="eventInviteSentImmediately" cssClass="form-check-input" id="eventInviteSentImmediately2" value="false" />
+								<label class="form-check-label" for="eventInviteSentImmediately2">No</label>
+							</div>
+						</div>
+						<div class="mb-4">
+							<label class="form-label">Immediate Invite Sent?</label><br />
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="autoResponseForRSVPAllowed" cssClass="form-check-input" id="autoResponseForRSVPAllowed1" value="true" />
+								<label class="form-check-label" for="autoResponseForRSVPAllowed1">Yes</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<form:radiobutton path="autoResponseForRSVPAllowed" cssClass="form-check-input" id="autoResponseForRSVPAllowed2" value="false" />
+								<label class="form-check-label" for="autoResponseForRSVPAllowed2">No</label>
+							</div>
+						</div>
+						<div class="mb-4">
+							<label for="autoResponseRSVPTemplate" class="form-label">RSVP
 								Email Template Name</label>
-
-							<div class="controls">
-								<form:select path="autoResponseRSVPTemplate"
-									cssClass="input-xlarge" id="autoResponseRSVPTemplate">
+							<div class="input-group">
+								<form:select path="autoResponseRSVPTemplate" cssClass="form-select" id="autoResponseRSVPTemplate">
 									<option value="">Select One</option>
 								</form:select>
 							</div>
 						</div>
-						<div class="control-group" id="processCompletionEmailTemplateCtl">
-							<label class="control-label" for="processCompletionTemplate">Process Completion
+						<div class="mb-4">
+							<label for="processCompletionTemplate" class="form-label">Process Completion
 								Email Template Name</label>
-
-							<div class="controls">
-								<form:select path="processCompletionTemplate"
-									cssClass="input-xlarge" id="processCompletionTemplate">
+							<div class="input-group">
+								<form:select path="processCompletionTemplate" cssClass="form-select" id="processCompletionTemplate">
 									<option value="">Select One</option>
 								</form:select>
 							</div>
-						</div>						
+						</div>
+
 					</div>
-				</fieldset>
-				<input class="btn btn-primary btn-large" type="submit"
-					value="SUBMIT" />
-				<a
-					href="${pageContext.request.contextPath}/${sessionScope.groupCode}/"
-					class="btn btn-large">CANCEL</a>
+					<div class="col-12 mt-4">
+						<input type="submit" value="SUBMIT" class="btn btn-primary btn-lg w-100 mb-2"/>
+						<a href="${pageContext.request.contextPath}/${sessionScope.groupCode}/" class="btn btn-secondary btn-lg w-100">CANCEL</a>
+					</div>
+				</div>
 			</form:form>
 		</div>
 	</div>
 </div>
+
+
 
 <script type="text/javascript">
 	$(document).ready(
@@ -339,10 +263,10 @@
 								},
 								eventDate : {
 									required : true,
-								//dateITA : true
+									//dateITA : true
 								},
 								rsvpDeadlineDate : {
-								//dateITA : true
+									//dateITA : true
 								},
 								groupEventInviteCodeLength : {
 									number : true
@@ -366,33 +290,20 @@
 									number : true
 								}
 							},
-							errorClass : "control-group error",
-							validClass : "control-group success",
-							errorElement : "span",
-							highlight : function(element, errorClass,
-									validClass) {
-								if (element.type === 'radio') {
-									this.findByName(element.name).parent("div")
-											.parent("div").removeClass(
-													validClass).addClass(
-													errorClass);
-								} else {
-									$(element).parent("div").parent("div")
-											.removeClass(validClass).addClass(
-													errorClass);
-								}
+							errorClass: "text-danger",
+							errorElement: "div",
+							highlight: function (element) {
+								$(element).addClass("is-invalid");
 							},
-							unhighlight : function(element, errorClass,
-									validClass) {
-								if (element.type === 'radio') {
-									this.findByName(element.name).parent("div")
-											.parent("div").removeClass(
-													errorClass).addClass(
-													validClass);
+							unhighlight: function (element) {
+								$(element).removeClass("is-invalid");
+							},
+							errorPlacement: function (error, element) {
+								if (element.closest('.input-group').length) {
+									// Place error *after* .input-group container
+									error.insertAfter(element.closest('.input-group'));
 								} else {
-									$(element).parent("div").parent("div")
-											.removeClass(errorClass).addClass(
-													validClass);
+									error.insertAfter(element);
 								}
 							}
 						})
@@ -405,6 +316,6 @@
 		buildGroupEmailTemplateOptionsByEventCode("NULL",
 				'autoResponseRSVPTemplate');
 		buildGroupEmailTemplateOptionsByEventCode("NULL",
-		'processCompletionTemplate');
+				'processCompletionTemplate');
 	});
 </script>
