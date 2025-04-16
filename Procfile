@@ -1,1 +1,1 @@
-web: ENVIRONMENT=postgresql  java -jar app/target/dependency/webapp-runner.jar --port $PORT --path /app app/target/app-0.1.0.war
+web: ENVIRONMENT=postgresql java -jar app/target/dependency/webapp-runner.jar --port $PORT --path /app app/target/app-0.1.0.war
