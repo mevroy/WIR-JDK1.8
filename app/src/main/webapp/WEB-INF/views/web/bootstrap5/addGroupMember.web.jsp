@@ -122,26 +122,42 @@
 </div>
 	<script type="text/javascript">
 		$(document).ready(function () {
-			new tempusDominus.TempusDominus(document.getElementById('birthdayPicker'), {
-				display: { components: { clock: false } },
-				localization: { format: 'dd/MM/yyyy' },
-				useCurrent: false
-			});
+				const dateTimeOptions = {
+					display: {
+						icons: {
+							type: 'icons',
+							time: 'bi bi-clock',
+							date: 'bi bi-calendar',
+							up: 'bi bi-chevron-up',
+							down: 'bi bi-chevron-down',
+							previous: 'bi bi-chevron-left',
+							next: 'bi bi-chevron-right',
+							today: 'bi bi-calendar-check',
+							clear: 'bi bi-trash',
+							close: 'bi bi-x-lg'
+						},
+						components: {
+							clock: false,
+						},
+						buttons: {
+							today: true,
+							clear: true,
+							close: true
+						}
+					},
+					localization: { format: 'dd/MM/yyyy' },
+					useCurrent: false
+				}
+			new tempusDominus.TempusDominus(document.getElementById('birthdayPicker'),
+				dateTimeOptions
+			);
 
 			const startPickerEl = document.getElementById('membershipStartDate');
 			const endPickerEl = document.getElementById('membershipEndDate');
 
-			const startPicker = new tempusDominus.TempusDominus(startPickerEl, {
-				display: { components: { clock: false } },
-				localization: { format: 'dd/MM/yyyy' },
-				useCurrent: false
-			});
+			const startPicker = new tempusDominus.TempusDominus(startPickerEl, dateTimeOptions);
 
-			const endPicker = new tempusDominus.TempusDominus(endPickerEl, {
-				display: { components: { clock: false } },
-				localization: { format: 'dd/MM/yyyy' },
-				useCurrent: false
-			});
+			const endPicker = new tempusDominus.TempusDominus(endPickerEl, dateTimeOptions);
 
 			// Link the two date pickers
 			startPicker.subscribe(tempusDominus.Namespace.events.change, (e) => {

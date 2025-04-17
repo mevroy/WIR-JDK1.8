@@ -56,25 +56,25 @@
 
 						<div class="mb-4">
 							<label for="eventDate" class="form-label">Event Date Time</label>
-							<div class="input-group">
-								<form:input path="eventDate" cssClass="form-control datetimepicker" id="eventDate" placeholder="Event Date"/>
-								<span class="input-group-text"><i class="bi bi-calendar-check-fill"></i></span>
+							<div class="input-group" id="eventDatePicker" data-td-target-input="nearest" data-td-target-toggle="nearest">
+								<form:input path="eventDate" cssClass="form-control datetimepicker" id="eventDate"  data-td-target="#eventDate" data-td-toggle="datetimepicker" placeholder="Event Date"/>
+								<span class="input-group-text" data-td-target="#eventDate" data-td-toggle="datetimepicker"><i class="bi bi-calendar-check-fill"></i></span>
 							</div>
 						</div>
 
 						<div class="mb-4">
 							<label for="rsvpDeadlineDate" class="form-label">RSVP Deadline Date Time</label>
-							<div class="input-group">
-								<form:input path="rsvpDeadlineDate" cssClass="form-control datetimepicker" readonly="readonly" id="rsvpDeadlineDate" placeholder="RSVP Deadline Date"/>
-								<span class="input-group-text"><i class="bi bi-calendar-x-fill"></i></span>
+							<div class="input-group" id="rsvpDeadlineDatePicker" data-td-target-input="nearest" data-td-target-toggle="nearest">
+								<form:input path="rsvpDeadlineDate" cssClass="form-control datetimepicker" readonly="readonly" id="rsvpDeadlineDate" data-td-target="#rsvpDeadlineDate" data-td-toggle="datetimepicker" placeholder="RSVP Deadline Date"/>
+								<span class="input-group-text" data-td-target="#rsvpDeadlineDate" data-td-toggle="datetimepicker"><i class="bi bi-calendar-x-fill"></i></span>
 							</div>
 						</div>
 
 						<div class="mb-4">
 							<label for="expiryDate" class="form-label">Event Expiry Date</label>
-							<div class="input-group">
-								<form:input path="expiryDate" cssClass="form-control datetimepicker" readonly="readonly" id="expiryDate" placeholder="Date after which event is invisible"/>
-								<span class="input-group-text"><i class="bi bi-clock-fill"></i></span>
+							<div class="input-group" id="expiryDatePicker" data-td-target-input="nearest" data-td-target-toggle="nearest">
+								<form:input path="expiryDate" cssClass="form-control datetimepicker" readonly="readonly" id="expiryDate" data-td-target="#expiryDate" data-td-toggle="datetimepicker" placeholder="Date after which event is invisible"/>
+								<span class="input-group-text" data-td-target="#expiryDate" data-td-toggle="datetimepicker"><i class="bi bi-clock-fill"></i></span>
 							</div>
 						</div>
 
@@ -244,6 +244,43 @@
 <script type="text/javascript">
 	$(document).ready(
 			function() {
+				const dateTimeOptions = {
+					display: {
+						icons: {
+							type: 'icons',
+							time: 'bi bi-clock',
+							date: 'bi bi-calendar',
+							up: 'bi bi-chevron-up',
+							down: 'bi bi-chevron-down',
+							previous: 'bi bi-chevron-left',
+							next: 'bi bi-chevron-right',
+							today: 'bi bi-calendar-check',
+							clear: 'bi bi-trash',
+							close: 'bi bi-x-lg'
+						},
+						components: {
+							calendar: true,
+							date: true,
+							month: true,
+							year: true,
+							decades: true,
+							clock: true,
+							hours: true,
+							minutes: true,
+							seconds: false,
+							useTwentyfourHour: true
+						},
+						buttons: {
+							today: true,
+							clear: true,
+							close: true
+						}
+					}
+				}
+				new tempusDominus.TempusDominus(document.getElementById('eventDatePicker'), dateTimeOptions);
+				new tempusDominus.TempusDominus(document.getElementById('rsvpDeadlineDatePicker'), dateTimeOptions);
+				new tempusDominus.TempusDominus(document.getElementById('expiryDatePicker'), dateTimeOptions);
+
 				$("#groupEvent").validate(
 						{
 							rules : {
