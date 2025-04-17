@@ -38,9 +38,9 @@
 			value="/WEB-INF/views/common/footer.web.jsp" />
 	</definition>
 
-	<definition name="home" extends="mobilebase">
+	<definition name="home" extends="mobilebasebootstrap5">
 		<put-attribute name="title" value="Home" />
-		<put-attribute name="content" value="/WEB-INF/views/web/home.web.jsp" />
+		<put-attribute name="content" value="/WEB-INF/views/web/bootstrap5/home.web.jsp" />
 	</definition>
 
 	<definition name="userRegistration" extends="base">
