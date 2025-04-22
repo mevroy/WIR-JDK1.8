@@ -2,9 +2,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
 <div class="jumbotron">
-<div class="p-5 mb-4 bg-light card rounded-3 shadow-lg">
-	<div class="card-body">
-	<div class="container-fluid py-4">
+	<div class="p-3 p-lg-5 card shadow-lg rounded-3 mb-4">
+		<div class="card-body">
+	<div class="container-fluid py-3">
 
 		<c:choose>
 			<c:when test="${sessionScope.groupName ne null}">
@@ -22,11 +22,11 @@
 
 				<div class="d-grid gap-2 d-md-flex">
 					<a href="registerInterest?interestType=Join Group" class="btn btn-primary btn-lg">
-						<i class="bi bi-pencil-square me-1"></i> Register Interest
+						Register Interest
 					</a>
 					<c:if test="${sessionScope.user eq null || empty sessionScope.user}">
 						<a href="login" class="btn btn-secondary btn-lg">
-							<i class="bi bi-box-arrow-in-right me-1"></i> Login
+							Login
 						</a>
 					</c:if>
 				</div>
