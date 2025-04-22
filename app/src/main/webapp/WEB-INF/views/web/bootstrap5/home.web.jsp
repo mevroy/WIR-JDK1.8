@@ -3,7 +3,7 @@
 
 <div class="jumbotron">
 	<div class="p-3 p-lg-5 card shadow-lg rounded-3 mb-4">
-		<div class="card-body">
+		<div>
 	<div class="container-fluid py-3">
 
 		<c:choose>

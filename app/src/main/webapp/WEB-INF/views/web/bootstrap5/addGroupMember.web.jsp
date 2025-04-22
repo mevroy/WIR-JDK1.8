@@ -76,7 +76,6 @@
 							</div>
 						</div>
 					</div>
-
 					<div id="moreDetails" style="display: none;">
 						<div class="mb-3">
 							<label for="membershipStartDate" class="form-label">Membership Dates</label>

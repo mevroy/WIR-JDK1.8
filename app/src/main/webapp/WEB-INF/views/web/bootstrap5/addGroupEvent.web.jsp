@@ -7,7 +7,7 @@
 
 <div class="jumbotron">
 	<div class="p-3 p-lg-5 card shadow-lg rounded-3 mb-4">
-		<div class="card-body">
+		<div>
 			<form:form commandName="groupEvent" action="saveGroupEvent" method="post" id="groupEvent">
 				<h2 class="mb-4">Add a New Group Event</h2>
 				<div class="row g-4">
