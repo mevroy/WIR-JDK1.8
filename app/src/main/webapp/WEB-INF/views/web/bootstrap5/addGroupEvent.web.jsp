@@ -153,28 +153,37 @@
 							</div>
 						</div>
 
-						<!-- Pricing Inputs -->
-						<div class="mb-4">
-							<label class="form-label">Member's Price</label>
+						<!-- Member's Price Inputs Inline with $ icon in label -->
+
+						<div class="mb-3">
+							<label for="amountPerhead" class="form-label">Member's Price</label>
 							<div class="input-group mb-2">
-								<span class="input-group-text">Adult $</span>
-								<form:input path="amountPerAdulthead" cssClass="form-control" id="amountPerAdulthead" placeholder="Adult Price"/>
+								<span class="input-group-text">Adult</span>
+								<form:input path="amountPerAdulthead" cssClass="form-control"
+											id="amountPerAdulthead" placeholder="Adult Price" />
+								<span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
 							</div>
 							<div class="input-group">
-								<span class="input-group-text">Child $</span>
-								<form:input path="amountPerKidHead" cssClass="form-control" id="amountPerKidHead" placeholder="Child Price"/>
+								<span class="input-group-text">Child</span>
+								<form:input path="amountPerKidHead" cssClass="form-control"
+											id="amountPerKidHead" placeholder="Child Price" />
+								<span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+
 							</div>
 						</div>
+
 
 						<div class="mb-4">
 							<label class="form-label">Non-Member's Price</label>
 							<div class="input-group mb-2">
-								<span class="input-group-text">Adult $</span>
+								<span class="input-group-text">Adult</span>
 								<form:input path="amountPerNMAdulthead" cssClass="form-control" id="amountPerNMAdulthead" placeholder="Non-Member Adult"/>
+								<span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
 							</div>
 							<div class="input-group">
-								<span class="input-group-text">Child $</span>
+								<span class="input-group-text">Child</span>
 								<form:input path="amountPerNMKidHead" cssClass="form-control" id="amountPerNMKidHead" placeholder="Non-Member Child"/>
+								<span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
 							</div>
 						</div>
 
