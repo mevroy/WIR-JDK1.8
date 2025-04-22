@@ -2,8 +2,8 @@
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
 <div class="jumbotron">
-	<div class="p-3 p-lg-5 mb-4 bg-light rounded-3">
-	<div class="container py-3">
+	<div class="p-3 p-lg-5 card shadow-lg rounded-3 mb-4">
+
 		<h2 class="mb-4">Add Group Member</h2>
 
 		<form:form commandName="groupMember" action="saveGroupMember" method="post" id="groupMember">
@@ -117,7 +117,6 @@
 				</div>
 			</div>
 		</form:form>
-	</div>
 	</div>
 </div>
 	<script type="text/javascript">
