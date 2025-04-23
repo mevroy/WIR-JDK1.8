@@ -284,7 +284,8 @@
 							clear: true,
 							close: true
 						}
-					}
+					},
+					localization: { format: 'dd/MM/yyyy HH:mm:ss' }
 				}
 				new tempusDominus.TempusDominus(document.getElementById('eventDatePicker'), dateTimeOptions);
 				new tempusDominus.TempusDominus(document.getElementById('rsvpDeadlineDatePicker'), dateTimeOptions);
